@@ -14,20 +14,24 @@
 				<%@include file="./shared/sidebar.jsp"%>
 			</div>
 			<div class="col-md-9">
-				<c:if test="${userClickProduct==true}">
-					<ol class="breadcrumb">
-						<li><a href="#">India</a></li>
-						<li><a href="#">japan</a></li>
-						<li class="active"><a href="#">Russia</a></li>
-					</ol>
-				</c:if>
-				<c:if test="${userCategoryProduct ==true}">
-  		  <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="${contextRoot}/Home">Home</a></li>
-        <li class="breadcrumb-item">Category</li>
-    	<li class="breadcrumb-item active"> <a href="#">${category.name}</a>
-         </ol>
-         </c:if>
+				<div class="col-md-12">
+
+					<c:if test="${userClickProduct==true}">
+						<ol class="breadcrumb">
+							<li class="breadcrumb-item"><a href="${contextRoot}/Home">Home</a></li>
+							<li class="breadcrumb-item active"><a href="${contextRoot}/product">All Products</a>
+						</ol>
+					</c:if>
+					<c:if test="${userClickCategoryProduct ==true}">
+
+						<ol class="breadcrumb">
+							<li class="breadcrumb-item"><a href="${contextRoot}/Home">Home</a></li>
+							<li class="active">Category</li>
+							<li class=" active"><a href="#">${category.name}</a></li>
+						</ol>
+					</c:if>
+				</div>
+
 			</div>
 		</div>
 

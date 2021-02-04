@@ -49,7 +49,7 @@
 		<%@include file="about.jsp"%>
 	</c:if>
 	
-	<c:if test="${userClickProduct==true || userCategoryProduct==False}">
+	<c:if test="${userClickProduct==true || userClickCategoryProduct==true}">
 		<%@include file="product.jsp"%>
 	</c:if>
 
