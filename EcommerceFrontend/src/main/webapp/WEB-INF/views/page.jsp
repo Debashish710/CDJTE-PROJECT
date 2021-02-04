@@ -48,6 +48,11 @@
 	<c:if test="${userClickAbout==true}">
 		<%@include file="about.jsp"%>
 	</c:if>
+	
+	<c:if test="${userClickProduct==true || userCategoryProduct==False}">
+		<%@include file="product.jsp"%>
+	</c:if>
+
 
 	
 	<!-- ======= Footer ======= -->
