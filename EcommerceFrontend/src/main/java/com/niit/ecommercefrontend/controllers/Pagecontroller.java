@@ -35,6 +35,16 @@ public class Pagecontroller {
 
 	}
 	
+	@RequestMapping("/contact")
+	public ModelAndView contact()
+	{
+		 ModelAndView mv=new  ModelAndView("page");
+		 mv.addObject("title","Contact us");
+		 mv.addObject("userClickContact",true);
+		 return mv;
+
+	}
+	
 	@RequestMapping("/product")
 	public ModelAndView product()
 	{
@@ -46,7 +56,7 @@ public class Pagecontroller {
 
 	}
 	
-	@RequestMapping("/category/{id}/product")
+	@RequestMapping("/category/{id}/products")
 	public ModelAndView category(@PathVariable("id")int id)
 	{
 		Category category=null;
