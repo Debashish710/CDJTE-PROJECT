@@ -8,6 +8,11 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Transient;
+import javax.validation.constraints.Min;
+
+import org.hibernate.validator.constraints.NotBlank;
+import org.springframework.web.multipart.MultipartFile;
 
 @Entity
 @Table(name="PRODUCT")
@@ -20,12 +25,17 @@ public class Product {
 	
 	private String code;
 	
+	
+	@NotBlank(message="Please enter your Name!!!")
 	private String name;
 	
+	@NotBlank(message="Please enter your Brand Name!!!")
 	private String brand;
 	
+	@NotBlank(message="Please Provide Your Description!!!")
 	private String description;
 	
+	@Min(value=1,message="Price Can't Be Less than 1!!!")
 	@Column(name="unit_price")
 	private String unitPrice;
 
@@ -43,6 +53,9 @@ public class Product {
 	
 	private int purchases;
 	
+	@Transient
+	private MultipartFile file;
+	
 	private int views;
 	
 	public Product()
@@ -55,6 +68,20 @@ public class Product {
 	
    //All Getter and Setter Method are here.
 	
+	public MultipartFile getFile() {
+		return file;
+	}
+
+
+
+
+	public void setFile(MultipartFile file) {
+		this.file = file;
+	}
+
+
+
+
 	public int getId() {
 		return id;
 	}

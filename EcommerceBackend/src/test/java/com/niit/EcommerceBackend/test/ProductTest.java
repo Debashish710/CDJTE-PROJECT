@@ -34,11 +34,11 @@ public class ProductTest {
 	public void testAddProduct() {
 		product = new Product();
 
-		product.setName("Iphone 12");
-		product.setBrand("Iphone");
+		product.setName("Bhharat");
+		product.setBrand("India");
 		product.setDescription("This is the latest model");
 		product.setUnitPrice("100000");
-		product.setCategoryId(3);
+		product.setCategoryId(1);
 		product.setActive(true);
 		product.setSupplierId(1);
 

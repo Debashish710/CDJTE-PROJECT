@@ -5,7 +5,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.niit.EcommerceBackend.dao.CategoryDAO;
+import com.niit.EcommerceBackend.dao.ProductDAO;
 import com.niit.EcommerceBackend.model.Category;
+import com.niit.EcommerceBackend.model.Product;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -15,6 +17,9 @@ public class Pagecontroller {
 	
 	@Autowired
 	CategoryDAO categoryDAO;
+	
+	@Autowired
+	ProductDAO productDAO;
 	
 	@RequestMapping(value={"/","/home","/index"})
 	public ModelAndView display()
@@ -45,6 +50,16 @@ public class Pagecontroller {
 
 	}
 	
+	@RequestMapping("/login")
+	public ModelAndView login()
+	{
+		 ModelAndView mv=new  ModelAndView("page");
+		 mv.addObject("title","Login");
+		 mv.addObject("userClickLogin",true);
+		 return mv;
+
+	}
+	
 	@RequestMapping("/product")
 	public ModelAndView product()
 	{
@@ -69,5 +84,21 @@ public class Pagecontroller {
 		 mv.addObject("userClickCategoryProduct",true);
 		 return mv;
 
+	}
+	
+//	code for single page product
+	@RequestMapping("/show/{id}/products")
+	public ModelAndView showSingleProducts(@PathVariable("id") int id) 
+	{
+		ModelAndView mv=new ModelAndView("page");
+		Product product=productDAO.get(id);
+		
+		product.setViews(product.getViews()+1);
+		
+		productDAO.update(product);
+		mv.addObject("title",product.getName());
+		mv.addObject("product",product);
+		mv.addObject("userClickSingleProduct",true);
+				return mv;
 	}
 }

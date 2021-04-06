@@ -1,8 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@taglib  uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
-<c:set var="contextRoot" value="${pageContext.request.contextPath }"/>
+<c:set var="contextRoot" value="${pageContext.request.contextPath }" />
 <%@taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <spring:url var="css" value="/resources/css"></spring:url>
 <spring:url var="img" value="/resources/img"></spring:url>
@@ -25,56 +25,90 @@
 <link
 	href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.6.2/animate.min.css"
 	rel="stylesheet">
-<link rel="stylesheet" href="${css}/style.css">
 <link rel="stylesheet" href="${css}/jquery.dataTables.css">
+<link rel="stylesheet" href="${css}/style.css">
+<!-- <link rel="stylesheet" href="${css}/Mystyle.css"> --> 
+<link rel="stylesheet" href="${css}/myapp.css">
 
 
-       <script>
-            window.contextRoot ="${contextRoot}"
-      </script>
+
+
+<script>
+    window.menu="${title}";
+	window.contextRoot = "${contextRoot}";
+</script>
+
+
+
 
 </head>
 
 <body>
+
+
 	<!-- ======= header ======= -->
 	<%@include file="./shared/header.jsp"%>
 
-	
+
 	<!-- ======= navbar ======= -->
 	<%@include file="./shared/navbar.jsp"%>
 	<!-- .nav-menu -->
-
-
 	
+		<%-- <c:if test="${userClickLogin==true}">
+		<%@include file="login.jsp"%>
+	</c:if>
+ --%>
+
+
+
 	<c:if test="${userClickHome==true}">
 		<%@include file="home.jsp"%>
 	</c:if>
 
 
-	
+
 	<c:if test="${userClickAbout==true}">
 		<%@include file="about.jsp"%>
 	</c:if>
 	
+
+
 	<c:if test="${userClickContact==true}">
 		<%@include file="contact.jsp"%>
 	</c:if>
-	
+
 	<c:if test="${userClickProduct==true || userClickCategoryProduct==true}">
 		<%@include file="product.jsp"%>
 	</c:if>
 
 
+<c:if test="${userClickSingleProduct==true}">
+		<%@include file="singleProduct.jsp"%>
+	</c:if>
 	
+	<c:if test="${userClickManageProducts==true}">
+		<%@include file="manageproduct.jsp"%>
+	</c:if>
+
+
 	<!-- ======= Footer ======= -->
 	<%@include file="./shared/footer.jsp"%>
 	<!-- End Footer -->
+ 
+
+
+    <!-- JavaScript -->
+    <script src="${js}/jquery.min.js"></script>
+	<script src="${js}/bootstrap.min.js"></script>
+    <script src="${js}/jquery.dataTables.js"></script>
+    <script src="${js}/myapp.js"></script>	
+
 	
 	
-	<!-- JavaScript -->
-	<script  src="${js}/jquery.dataTables.js"></script>
-	<script  src="${js}/myapp.js"></script>
+
+
 
 </body>
+
 
 </html>
