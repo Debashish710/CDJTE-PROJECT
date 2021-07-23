@@ -1,10 +1,6 @@
 package com.niit.EcommerceBackend.test;
 
 
-
-
-
-
 import static org.junit.Assert.assertEquals;
 
 import org.junit.BeforeClass;

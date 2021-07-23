@@ -20,9 +20,13 @@ public interface ProductDAO {
 	boolean delete(Product product);
 	
 	//extra functionalities
+	
 	List<Product>listActiveProducts();
 	List<Product>listActiveProductsByCategory(int categoryId);
 	List<Product>getLatestActiveProducts(int count);
+	
+
+	
 	
 
 }

@@ -17,7 +17,7 @@
 					<h2 class="animated bounceInRight" style="animation-delay: 1s">We Are <span>Creative</span></h2>
 					<h3 class="animated bounceInLeft" style="animation-delay: 2s">Tour Planner and Executor Agency</h3>
 					<p class="animated bounceInRight" style="animation-delay: 3s">
-						<a href="#">Contact us</a>
+						<a href="${contextRoot}/contact">Contact us</a>
 					</p>
 				</div>
 			</div>
@@ -27,7 +27,7 @@
 					<h2 class="animated slideInDown" style="animation-delay: 1s">We Are <span>Swap</span></h2>
 					<h3 class="animated fadeInUp" style="animation-delay: 2s">Tour Planner and Executor Agency</h3>
 					<p class="animated zoomIn" style="animation-delay: 3s">
-						<a href="#">Contact us</a>
+						<a href="${contextRoot}/contact">Contact us</a>
 					</p>
 				</div>
 			</div>
@@ -37,7 +37,7 @@
 					<h2 class="animated zoomIn" style="animation-delay: 1s">We Are <span>Reliable</span></h2>
 					<h3 class="animated fadeInLeft" style="animation-delay: 2s">Tour Planner and Executor Agency</h3>
 					<p class="animated zoomIn" style="animation-delay: 3s">
-						<a href="#">Contact us</a>
+						<a href="${contextRoot}/contact">Contact us</a>
 					</p>
 				</div>
 			</div>

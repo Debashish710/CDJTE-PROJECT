@@ -25,6 +25,17 @@ public class JsonController {
 		
 		return productDAO.listActiveProducts();
 	}
+	
+	
+	//for Admin
+	@RequestMapping("/admin/all/products")
+	@ResponseBody
+	public List<Product>getAllProductsByAdmin()
+	{
+		
+		return productDAO.lists();
+	}
+
 
 	
 	@RequestMapping("/category/{id}/products")

@@ -40,6 +40,16 @@ public class Pagecontroller {
 
 	}
 	
+	@RequestMapping("/services")
+	public ModelAndView services()
+	{
+		 ModelAndView mv=new  ModelAndView("page");
+		 mv.addObject("title","Our Services");
+		 mv.addObject("userClickServices",true);
+		 return mv;
+
+	}
+	
 	@RequestMapping("/contact")
 	public ModelAndView contact()
 	{

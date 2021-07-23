@@ -40,7 +40,7 @@ public class ProductDAOImpl implements ProductDAO {
 
 	@Override
 	public List<Product> lists() {
-	return sessionFactory.getCurrentSession().createQuery("FROM PRODUCT", Product.class).getResultList();
+	return sessionFactory.getCurrentSession().createQuery("FROM Product", Product.class).getResultList();
 	}
 	
 	
@@ -118,5 +118,24 @@ public class ProductDAOImpl implements ProductDAO {
 		
 		return sessionFactory.getCurrentSession().createQuery(latestActiveProducts,Product.class).setParameter("active", true).setFirstResult(0).setFirstResult(count).getResultList();
 	}
+
+
+
+
+	
+
+
+
+
+	
+
+
+
+
+
+
+
+
+
 
 }

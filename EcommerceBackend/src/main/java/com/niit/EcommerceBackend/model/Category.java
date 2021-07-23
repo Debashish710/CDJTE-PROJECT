@@ -1,10 +1,16 @@
 package com.niit.EcommerceBackend.model;
 
+import java.util.UUID;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Transient;
+
+import org.hibernate.validator.constraints.NotBlank;
+import org.springframework.web.multipart.MultipartFile;
 
 @Entity
 public class Category {
@@ -12,7 +18,11 @@ public class Category {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int id;
+	
+	@NotBlank(message="Please Enter Your Name!!")
 	private String name;
+	
+	@NotBlank(message="Please Enter Your Description!!!")
 	private String description;
 	
 	@Column(name="image_url")
@@ -21,10 +31,35 @@ public class Category {
 	@Column(name="is_active")
 	private boolean active=true;
 	
+	private String code;
+	
+	@Transient
+	private MultipartFile file;
+	
+	public Category()
+	{
+		
+		this.code="PRD"+UUID.randomUUID().toString().substring(26).toUpperCase();
+	}
+	
 	
 	//all  getter and setter method
+	
+	
 	public int getId() {
 		return id;
+	}
+	public String getCode() {
+		return code;
+	}
+	public void setCode(String code) {
+		this.code = code;
+	}
+	public MultipartFile getFile() {
+		return file;
+	}
+	public void setFile(MultipartFile file) {
+		this.file = file;
 	}
 	public void setId(int id) {
 		this.id = id;
@@ -56,7 +91,7 @@ public class Category {
 	
 	@Override
 	public String toString() {
-		return "Category [id=" + id + ", name=" + name + ", description=" + description + ", imageURL=" + imageURL
+		return "Category [id=" + id + ",code=" + code + ", name=" + name + ", description=" + description + ", imageURL=" + imageURL
 				+ ", active=" + active + "]";
 	}
 	
